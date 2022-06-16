@@ -52,7 +52,15 @@ GROUP BY category_id
 HAVING sum(qoh) > 10;
 /* Combining WHERE and HAVING to pre-filter a GROUP BY. */
 
-SELECT category_id, price, COUNT(*)
+SELECT category_id, price, COUNT(id)
 FROM products
 GROUP BY category_id, price;
 /* Grouping by a combination of category_id and price. */
+
+SELECT category_id, SUM(qoh)
+FROM products
+WHERE price >= 1.00
+GROUP BY category_id
+HAVING sum(qoh) > 10
+ORDER BY category_id DESC;
+/* Combining everything. */
