@@ -16,4 +16,4 @@ WHERE id > 20;
 
 SELECT COUNT(*)
 FROM products 
-WHERE name LIKE 'Ice Cream%';
+WHERE UPPER(name) LIKE 'ICE CREAM%'
