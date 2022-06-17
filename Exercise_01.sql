@@ -1,5 +1,8 @@
 CREATE DATABASE exercise_01;
 
+DROP TABLE IF EXISTS Orders;
+DROP TABLE IF EXISTS Clients;
+
 CREATE TABLE Clients (
     ID int PRIMARY KEY AUTO_INCREMENT,
     Name varchar(30),
