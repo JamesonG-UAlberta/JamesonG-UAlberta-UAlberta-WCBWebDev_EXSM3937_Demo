@@ -17,14 +17,14 @@ Tables live in databases, which act sort of like workbooks in Excel, housing man
 
 You can create tables and databases using a CREATE statement:
 
-    CREATE DATABASE mydatabase
+    CREATE DATABASE mydatabase;
 
 and
 
     CREATE TABLE myfirsttable (
         id int PRIMARY KEY AUTO_INCREMENT,
         name varchar(30)
-    )
+    );
 
 Records are identified by a primary key, which serves as a unique identifier for that record. They also serve to link a record to information in other tables through foriegn keys (when the primary key is used in a record in another table).
 
@@ -34,7 +34,7 @@ AUTO_INCREMENT tells the database to generate an incremental number for the fiel
         id int PRIMARY KEY AUTO_INCREMENT,
         otherid int REFERENCES myfirsttable.id
         information varchar(255)
-    )
+    );
 
 In this example, the 'otherid' field is referencing the id field of the first table through a foreign key. This allows records in this table to "point to" records in the first table. 
 
