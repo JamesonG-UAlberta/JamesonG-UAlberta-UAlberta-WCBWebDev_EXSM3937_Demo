@@ -30,7 +30,7 @@ Aggregates essentially turn your data set into a "big bowl of soup", and pick on
 
 Aggregates are often combined with GROUP BY clauses, which filter the "bowl of soup" into smaller "cups of soup". In the snippet above, the data set is broken up into one "cup of soup" for each ID value of the first table. When these clauses are used with aggregates, the aggregate is run on each "cup" instead of the "big bowl".
 
-When writing queries in this way, it is important to recognize that using fields not in the GROUP BY and outside of aggregates in your field list (the SELECT clause) will result in garbage data, as it will simply pick the first value in the group (not by any defined rule). 
+When writing queries in this way, it is important to recognize that using fields not in the GROUP BY and outside of aggregates in your field list (the SELECT clause) will result in garbage data, as it will simply pick the first value in the group (not by any defined rule). Some database systems will just error out if you try (for example SQL Server).
 
 When WHERE clauses are used with GROUP BY clauses, the WHERE clause runs first. If you want to filter based on the result of a GROUP BY / Aggregate, you must use a HAVING clause. If the GROUP BY / Aggregates are a "factory", the WHERE guards the "entrance" and the HAVING guards the "exit". 
 ---
